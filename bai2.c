@@ -12,30 +12,50 @@
 
 #include <stdio.h>
 
+// Hàm nhập mảng
+void nhapMang(int mang[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("Nhap phan tu thu %d: ", i + 1);
+        scanf("%d", &mang[i]);
+    }
+}
+
+// Hàm tìm giá trị lớn nhất
+int timMax(int mang[], int n) {
+    int max = mang[0];
+    for (int i = 1; i < n; i++) {
+        if (mang[i] > max) {
+            max = mang[i];
+        }
+    }
+    return max;
+}
+
+// Hàm tìm giá trị nhỏ nhất
+int timMin(int mang[], int n) {
+    int min = mang[0];
+    for (int i = 1; i < n; i++) {
+        if (mang[i] < min) {
+            min = mang[i];
+        }
+    }
+    return min;
+}
+
 int main() {
-    int n, i;
+    int n;
     printf("Nhap so phan tu cua mang: ");
     scanf("%d", &n);
 
     int mang[n];
-    for(i = 0; i < n; i++) {
-        printf("Nhap phan tu thu %d: ", i + 1);
-        scanf("%d", &mang[i]);
-    }
 
-    int max = mang[0];
-    int min = mang[0];
-    for(i = 1; i < n; i++) {
-        if(mang[i] > max) {
-            max = mang[i];
-        }
-        if(mang[i] < min) {
-            min = mang[i];
-        }
-    }
+    nhapMang(mang, n);
 
-    printf("Gia tri lon nhat trong mang la: %d\n", max);
-    printf("Gia tri nho nhat trong mang la: %d\n", min);
+    int max = timMax(mang, n);
+    int min = timMin(mang, n);
+
+    printf("Gia tri lon nhat trong mang: %d\n", max);
+    printf("Gia tri nho nhat trong mang: %d\n", min);
 
     return 0;
 }

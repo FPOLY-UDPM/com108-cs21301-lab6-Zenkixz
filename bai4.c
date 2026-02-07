@@ -10,30 +10,3 @@
 
 // VIẾT CODE Ở ĐÂY
 
-#include <stdio.h>
-
-int main() {
-    int n, m, i, j;
-    printf("Nhap so hang cua ma tran: ");
-    scanf("%d", &n);
-    printf("Nhap so cot cua ma tran: ");
-    scanf("%d", &m);
-
-    int matrix[n][m];
-    for(i = 0; i < n; i++) {
-        for(j = 0; j < m; j++) {
-            printf("Nhap phan tu tai vi tri [%d][%d]: ", i + 1, j + 1);
-            scanf("%d", &matrix[i][j]);
-        }
-    }
-
-    printf("Ma tran binh phuong la:\n");
-    for(i = 0; i < n; i++) {
-        for(j = 0; j < m; j++) {
-            printf("%d ", matrix[i][j] * matrix[i][j]);
-        }
-        printf("\n");
-    }
-
-    return 0;
-}
